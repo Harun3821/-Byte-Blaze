@@ -35,10 +35,12 @@ import Bookmarks from "../pages/Bookmarks.jsx"
                 {
                     index: true,
                     element:<Contant></Contant>,
+                    loader: ({params}) => fetch(`https://dev.to/api/articles/${params.id}`),
                 },
                 {
                    path: 'author',
                    element: <Author></Author>,
+                   loader: ({params}) => fetch(`https://dev.to/api/articles/${params.id}`),
                 },
             ],
         },

@@ -1,15 +1,23 @@
 import { useState } from "react";
-import { Link, Outlet, useLoaderData } from "react-router-dom";
+import { Link, Outlet, useLoaderData} from "react-router-dom";
+import { FiBookmark } from "react-icons/fi";
 
 
 
-const Blog = () => {
+
+const Blog = ( ) => {
   
-    const [tabeindex, setTabeindex] = useState(0) 
+const [tabeindex, setTabeindex,] = useState(0) 
+
+ 
 
   const blog = useLoaderData()
 
-  const {comments_count, title, reading_time_minutes,  published_at, positive_reactions_count} = blog
+  const {comments_count, title, reading_time_minutes,  published_at, positive_reactions_count,} = blog
+
+     const handelbookmarkes = blog=>{
+        savebloges(blog)
+     }
 
     return (
         <div className="max-w-3xl px-6 py-16 mx-auto space-y-12 ">
@@ -42,33 +50,19 @@ const Blog = () => {
 		</svg>
 		<span>Author</span>
 	</Link>
-</div>
-               
-</div>
+
+      <div    
+      onClick={()=> handelbookmarkes(blog) }
+      className="bg-primary ml-5  p-3 rounded-full hover:bg-opacity-30 bg-opacity-20 cursor-pointer hover:scale-105 overflow-hidden">
+      <FiBookmark size={20} className="text-secondary" />
+      </div>
+    
+   </div>
+  </div>
   <Outlet></Outlet>          
 </article>
 
-        <div>
-            <div className="flex flex-wrap py-6 gap-2 border-t border-dashed border-gray-400">
-                <a rel="noopener noreferrer" href="#" className="px-3 py-1 rounded-sm hover:underline bg-violet-400 text-gray-900">#MambaUI</a>
-                <a rel="noopener noreferrer" href="#" className="px-3 py-1 rounded-sm hover:underline bg-violet-400 text-gray-900">#TailwindCSS</a>
-                <a rel="noopener noreferrer" href="#" className="px-3 py-1 rounded-sm hover:underline bg-violet-400 text-gray-900">#Angular</a>
-            </div>
-            <div className="space-y-2">
-                <h4 className="text-lg font-semibold">Related posts</h4>
-                <ul className="ml-4 space-y-1 list-disc">
-                    <li>
-                        <a rel="noopener noreferrer" href="#" className="hover:underline">Nunc id magna mollis</a>
-                    </li>
-                    <li>
-                        <a rel="noopener noreferrer" href="#" className="hover:underline">Duis molestie, neque eget pretium lobortis</a>
-                    </li>
-                    <li>
-                        <a rel="noopener noreferrer" href="#" className="hover:underline">Mauris nec urna volutpat, aliquam lectus sit amet</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+     
     </div>
     );
 };
