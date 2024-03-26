@@ -18,7 +18,7 @@ const Bookmarks = () => {
                     bloges.map(blog => <BlogeCard key={blog.id} blog={blog}></BlogeCard>)
                 }
                      */}
-                     <h2>My book mark</h2>
+              <h2>My book mark</h2>
             </div>
 
     

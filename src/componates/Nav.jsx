@@ -28,13 +28,13 @@ const Nav = () => {
     return (
     <div className="navbar bg-base-100 shadow-lg px-4 sm:px-8 fixed z-10">
     <Link to='/'  className="flex-1">
-    <button className="btn btn-ghost text-2xl gap-0 text-secondary normal-case">Byte<span className="text-primary">Blaze</span></button>
+    <button className="btn btn-ghost text-2xl gap-0 text-secondary normal-case">Book<span className="text-primary"> Vibe</span></button>
   </Link>
-<div className="flex-none">
+<div className="flex justify-center item">
     <ul className="menu menu-horizontal px-1 hidden sm:flex gap-5 items-center">
     <NavLink to='/' className={({isActive})=>isActive ? 'text-primary font-bold' : 'font-bold'}>Home</NavLink>
-    <NavLink to='/bloges' className={({isActive})=>isActive ? 'text-primary font-bold' : 'font-bold'}>Bloges</NavLink>
-    <NavLink to='/bookmarks' className={({isActive})=>isActive ? 'text-primary font-bold' : 'font-bold'}>Bookmarks</NavLink>
+    <NavLink to='/bloges' className={({isActive})=>isActive ? 'text-primary font-bold' : 'font-bold'}>Listed Books</NavLink>
+    <NavLink to='/bookmarks' className={({isActive})=>isActive ? 'text-primary font-bold' : 'font-bold'}>Pages to Read</NavLink>
      </ul>
 
    <label className="cursor-pointer grid place-items-center">
